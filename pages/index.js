@@ -24,7 +24,7 @@ export default function Home() {
           onClick={() => authenticate({ type: "sol" })}
           disabled={isAuthenticating}
         >
-          Login
+          Login with phantom
         </button>
         <button onClick={() => authenticate({ provider: "walletconnect" })}>
           Login with wallet connect
