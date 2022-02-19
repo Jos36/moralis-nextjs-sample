@@ -12,6 +12,11 @@ export default function Home() {
   } = useMoralis();
   console.log(isAuthenticated);
   const [inputValue, setInputValue] = useState("");
+
+  async function authWalletConnect() {
+    const user = authenticate({ provider: "walletconnect" });
+  }
+
   if (!isAuthenticated) {
     return (
       <div>
@@ -20,6 +25,9 @@ export default function Home() {
           disabled={isAuthenticating}
         >
           Login
+        </button>
+        <button onClick={() => authenticate({ provider: "walletconnect" })}>
+          Login with wallet connect
         </button>
         {isAuthenticating ? <p>waiting for auth</p> : ""}
       </div>
